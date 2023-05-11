@@ -9,24 +9,21 @@ import android.view.ViewGroup
 import com.example.recyler_view_1.R
 
 class FRagmen_RV_1 : Fragment() {
-
-    companion object {
-        fun newInstance() = FRagmen_RV_1()
-    }
-
-    private lateinit var viewModel: FRagmenRV1ViewModel
+    lateinit var v : View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_f_ragmen__r_v_1, container, false)
+        v = inflater.inflate(R.layout.fragment_f_ragmen__r_v_1,container, false)
+        recipelist.add(Recipe("Fideos", "descripcion de fideos1"))
+
+        recycleRecetas = v.findViewById(R.id.recRecetas)
+        return v
+
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FRagmenRV1ViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onStart(){
+        super.onStart()
     }
-
 }
