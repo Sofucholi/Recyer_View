@@ -6,8 +6,29 @@
     app:startDestination="@id/FRagmen_RV_1">
 
     <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.recyler_view_1.fragments.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" >
+        <argument
+            android:name="Titulo"
+            app:argType="string"
+            android:defaultValue=" " />
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue=" " />
+        <argument
+            android:name="ingredientes"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
         android:id="@+id/FRagmen_RV_1"
         android:name="com.example.recyler_view_1.fragments.FRagmen_RV_1"
         android:label="fragment_f_ragmen__r_v_1"
-        tools:layout="@layout/fragment_f_ragmen__r_v_1" />
+        tools:layout="@layout/fragment_f_ragmen__r_v_1" >
+        <action
+            android:id="@+id/action_FRagmen_RV_1_to_infoFragment2"
+            app:destination="@id/infoFragment" />
+    </fragment>
 </navigation>
