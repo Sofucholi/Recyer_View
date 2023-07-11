@@ -29,6 +29,10 @@ class FRagmen_RV_1 : Fragment() {
         aleacioneslist.clear()
 
         aleacioneslist.add(Aleaciones("Acero", "https://serycoin.com/wp-content/uploads/2020/07/acero-construccion-Serycoin.jpg", mutableListOf("Carbono","Hierro")))
+        aleacioneslist.add(Aleaciones("Alnico", "", mutableListOf("Colbato","Aluminio","Níquel","También puede contener:","Cobre","Titanio","Hierro")))
+        aleacioneslist.add(Aleaciones("Alpaca", "", mutableListOf("Zinc","Cobre","Níquel")))
+        aleacioneslist.add(Aleaciones("Bronce", "", mutableListOf("Cobre","Estaño")))
+        aleacioneslist.add(Aleaciones("Constantán", "", mutableListOf("Cobre","Níquel")))
 
         recycleAleaciones = v.findViewById(R.id.recycler)
 
