@@ -23,10 +23,10 @@
         android:layout_below="@id/tituloTxt"
         android:textAlignment="center"/>
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:id="@+id/imagen"
         android:layout_centerHorizontal="true"
-        android:layout_margin="60dp"
+        android:layout_margin="20dp"
         android:layout_marginTop="40dp"/>
 </RelativeLayout>

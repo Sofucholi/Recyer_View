@@ -2,26 +2,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_navgraph"
+    android:id="@+id/navgraph"
     app:startDestination="@id/FRagmen_RV_1">
 
-    <fragment
-        android:id="@+id/infoFragment"
-        android:name="com.example.recyler_view_1.fragments.InfoFragment"
-        android:label="fragment_info"
-        tools:layout="@layout/fragment_info" >
-        <argument
-            android:name="Titulo"
-            app:argType="string"
-            android:defaultValue=" " />
-        <argument
-            android:name="url"
-            app:argType="string"
-            android:defaultValue=" " />
-        <argument
-            android:name="ingredientes"
-            app:argType="string[]" />
-    </fragment>
     <fragment
         android:id="@+id/FRagmen_RV_1"
         android:name="com.example.recyler_view_1.fragments.FRagmen_RV_1"
@@ -30,5 +13,23 @@
         <action
             android:id="@+id/action_FRagmen_RV_1_to_infoFragment2"
             app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.recyler_view_1.fragments.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" >
+        <argument
+            android:name="titulo"
+            app:argType="string" />
+        <argument
+            android:name="url"
+            app:argType="string" />
+        <argument
+            android:name="ingredientes"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_infoFragment_to_FRagmen_RV_12"
+            app:destination="@id/FRagmen_RV_1" />
     </fragment>
 </navigation>

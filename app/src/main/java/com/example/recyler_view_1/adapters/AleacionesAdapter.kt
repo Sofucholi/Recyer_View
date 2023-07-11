@@ -10,16 +10,16 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.recyler_view_1.R
-import com.example.recyler_view_1.entities.Recipe
+import com.example.recyler_view_1.entities.Aleaciones
 
 
-class RecipeAdapter (
-    var recipeList : MutableList <Recipe>,
+class AleacionesAdapter(
+    var aleacionesList: MutableList <Aleaciones>,
     val context: Context,
-    var onClick : (Int) -> Unit
-) : RecyclerView.Adapter<RecipeAdapter.RecipeHolder>() {
+    var onClick: (Int) -> Unit
+) : RecyclerView.Adapter<AleacionesAdapter.AleacionesHolder>() {
 
-    class RecipeHolder (v: View) : RecyclerView.ViewHolder(v) {
+    class AleacionesHolder (v: View) : RecyclerView.ViewHolder(v) {
         private var view: View
         init {
             this.view = v
@@ -41,21 +41,21 @@ class RecipeAdapter (
 
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeHolder {
-        val view =  LayoutInflater.from(parent.context).inflate(R.layout.recipe_item,parent,false)
-        return (RecipeHolder(view))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AleacionesHolder {
+        val view =  LayoutInflater.from(parent.context).inflate(R.layout.aleaciones_item,parent,false)
+        return (AleacionesHolder(view))
     }
 
     override fun getItemCount(): Int {
-        return recipeList.size
+        return aleacionesList.size
     }
 
-    override fun onBindViewHolder(holder: RecipeHolder, position: Int) {
-        holder.setName(recipeList[position].nombre)
+    override fun onBindViewHolder(holder: AleacionesHolder, position: Int) {
+        holder.setName(aleacionesList[position].nombre)
 
         Glide
             .with(context)
-            .load(recipeList[position].url)
+            .load(aleacionesList[position].url)
             .centerInside()
             .into(holder.getImageView());
 //
