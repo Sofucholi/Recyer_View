@@ -35,7 +35,7 @@ class mainFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         btnLogin.setOnClickListener{
-            var action = mainFragmentDirections.actionMainFragmentToLoginFragment()
+            var action = mainFragmentDirections.actionMainFragmentToLoginFragment("","")
             Navigation.findNavController(v).navigate(action)
 
         }

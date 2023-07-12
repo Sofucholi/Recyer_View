@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.navigation.Navigation
 import com.example.recyler_view_1.R
 import com.example.recyler_view_1.entities.Usuario
 import com.example.recyler_view_1.viewModel.RegisterViewModel
@@ -17,7 +18,7 @@ class RegisterFragment : Fragment() {
     lateinit var btnRegistro: Button
     lateinit var usuariosList: MutableList<Usuario>
     lateinit var nombreEdttxt: EditText
-    lateinit var contraseñaEdttxt: EditText
+    lateinit var contrasenaEdttxt: EditText
 
     companion object {
         fun newInstance() = RegisterFragment()
@@ -30,10 +31,10 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_register, container, false)
-        btnRegistro = v.findViewById(R.id.registerBtn)
+        btnRegistro = v.findViewById(R.id.registrarseBtn)
 
         nombreEdttxt = v.findViewById(R.id.UsuarioTxt)
-        contraseñaEdttxt = v.findViewById(R.id.ContraseñaTxt)
+        contrasenaEdttxt = v.findViewById(R.id.ContrasenaTxt)
 
         usuariosList = mutableListOf(Usuario("" ,""))
 
@@ -44,10 +45,11 @@ class RegisterFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         btnRegistro.setOnClickListener {
-           var nombre = nombreEdttxt.text
-            var contraseña = contraseñaEdttxt.text
+           var nombre = nombreEdttxt.text.toString()
+            var contraseña:String = contrasenaEdttxt.text.toString()
             if (!nombre.isEmpty() && !contraseña.isEmpty()){
-                var action = RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
+                var action = RegisterFragmentDirections.actionRegisterFragmentToLoginFragment(nombre,contraseña)
+                Navigation.findNavController(v).navigate(action)
             }
         }
     }

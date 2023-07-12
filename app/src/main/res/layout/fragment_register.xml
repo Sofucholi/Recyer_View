@@ -15,7 +15,7 @@
         android:text="Registrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ContraseñaTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/ContrasenaTxt" />
 
     <EditText
         android:id="@+id/UsuarioTxt"
@@ -29,15 +29,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/ContraseñaTxt"
+        android:id="@+id/ContrasenaTxt"
         android:layout_width="283dp"
         android:layout_height="68dp"
         android:layout_marginTop="32dp"
         android:hint="Ingresa la contraseña"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UsuarioTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioTxt"
+
+        />
 
     <TextView
         android:id="@+id/textView"
